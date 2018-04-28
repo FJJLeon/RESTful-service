@@ -8,7 +8,7 @@ convert wordladder by java to a RESTful service using spring boot
 ## 3. the result will show within interface like:
         A ladder from bog back to bee: bog beg bee
 
-# Tag 2.0
+# Tag 2.0 (something wrong with the tag 2.0 please download the most new )
 # Add spring-security to origin spring boot starter project
 
 ## 1. add this project to Eclipse

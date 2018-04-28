@@ -104,7 +104,7 @@ public class wordladderController {
 		//System.out.printf("No word ladder found from %s back to %s.\n",word2,word1);
 		return "No word ladder found from "+word2+" back to "+word1+".";
 	}
-
+	
 	public static String readDict(Set<String> dict, String dict_name) {
 		// a set contain all valid name of dictionary
 		Set<String> dicts = new HashSet<String>() {{
@@ -123,7 +123,23 @@ public class wordladderController {
 			//dict_name = in.nextLine();
 		}
 		//in.close();
-		File file = new File("src\\main\\resources\\static\\" +dict_name);
+		
+		
+		// different from wordladderWEB, don't know why?
+		// if run on tomcat serve should be 1， 
+		// and the url should like "http://localhost:8080/WordladderWebApplication/wordladder?dictname=smalldict1.txt&word1=bee&word2=bog"
+		// if run as spring boot app, should be 2
+		// and the url like "http://localhost:8080/wordladder?dictname=smalldict1.txt&word1=bee&word2=bog"
+		
+		/* 1 */
+		//String path = wordladderController.class.getClassLoader().getResource("/static/"+dict_name).getPath();
+		//System.out.println(path);
+		//File file = new File(path);
+		
+		/* 2 */
+		File file = new File(".\\src\\main\\resources\\static\\" +dict_name);
+		
+		
 		try {
 			//read by line
 			BufferedReader reader = new BufferedReader(new FileReader(file));
